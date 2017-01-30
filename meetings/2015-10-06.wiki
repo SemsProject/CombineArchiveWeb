@@ -1,0 +1,22 @@
+(dw, vt, ms, mp)
+= webCAT Roadmap Meeting =
+
+== features ==
+=== parsing COMBINE compliant files #134 ===
+* parse meta data in files and place them in the CA meta data
+* concern moved to combine-ext:#6
+
+=== fetching files #133 ===
+* retrieving files from URL, instead of forcing the user to download/upload resources
+
+=== Import RO #135 ===
+
+=== Import CA/RO from Seeek #126 ===
+
+=== Renaming some buttons #125 ===
+
+=== include "own VCard" #110 ===
+
+=== checking for grammar #136 ===
+
+=== highlight master file #137 ===

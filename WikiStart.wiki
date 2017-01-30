@@ -1,0 +1,35 @@
+= !CombineArchive !WebInterface =
+
+The [http://co.mbine.org/documents/archive CombineArchive] is a zip like format to bundle latest research files and annotate them with meta data. The **!CombineArchive !WebInterface** is a web based user interface to create, modify, and share !CombineArchives. **No need for registration.** Just [http://cat.sems.uni-rostock.de/ start using the web interface]! :)
+
+Currently, the project is under heavy development, but contributions of any kind are welcome.
+
+== Development ==
+
+The [source:src/main/java/de/unirostock/sems/cbarchive/web sources] are available from our git repository:
+{{{
+git clone https://github.com/SemsProject/CombineArchiveWeb
+}}}
+Known issues are tracked at our [https://sems.uni-rostock.de/trac/combinearchive-web/report ticket system]. If you discover any bugs or if you have any problems, do not hesitate to [/newticket submit a new ticket].
+
+
+== Build ==
+
+We use maven as build tool in this project. To build a binary file from our sources just execute following command:
+{{{
+mvn package
+}}}
+For more detailed instructions see BuildAndInstall.
+
+== API ==
+
+We support open and interoperable software!
+
+The [wiki:WikiStart CombineArchive WebInterface] can be integrated without much hassle. To allow the Visitors of your website a good glimpse into the archive provided by you just add a link such as the following:
+
+{{{
+http://webcat.sems.uni-rostock.de/rest/import?remote=http://your.server/path&name=ANYNAME
+}}}
+
+
+The Webinterface [wiki:Api exposes several other interfaces] for creating, modifying and deleting archives, archive-entries or meta-entries in a workspace. Most of them are meant for client-server communication, but can also be used by 3rd party software.

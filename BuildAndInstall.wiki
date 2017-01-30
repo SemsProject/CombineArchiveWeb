@@ -1,0 +1,23 @@
+= Build and Install the !CombineArchive !WebInterface =
+
+In order to run your own instance of the !CombineArchive !WebInterface you need to obtain a binary, deploy it to your web server and optionally configure the tool.
+
+== Obtain a Binary ==
+The latest binaries of this project is available for [http://bin.sems.uni-rostock.de/CombineArchiveWeb/ download from our repository]. In case you prefer to compile the source by your own, please have a look at the [BuildInstructions detailed build instructions].
+
+== Deploy the Binary ==
+There are tons of different servlet container/web servers out there and, obviously, we cannot write documentation for all of them. Therefore, we here focus on the most popular one: The Apache Tomcat in version 7. If you're using something else please refer to the manual of your web server and in case of problems do not hesitate to contact one of us.
+
+=== Deploy to Tomcat ===
+All you need to deploy the binary to your tomcat instance, is to copy the `war` file into the `webapps` directory. On Debian for instance it is located in `/var/lib/tomcat7/webapps`. To ease the update process and further maintenance it is recommended to remove all versions marks from the file name, so your file is named `CombineArchiveWeb.war` for instance.
+
+=== Configure the Interface ===
+Since not every system is equal, you may want to adapt some settings of the !WebInterface. Archiving this is as simple as deploying the application to Tomcat: All you need is to define some context parameters.
+
+This could either be done in the `context.xml` located in the `conf` directory of Tomcat (in Debian `/var/lib/tomcat7/conf`) or by creating an extra xml file in `$CATALINA_BASE/conf/[enginename]/[hostname]/` named like the application. Whereby the second way is the recommend one, because so the additional parameter only apply to on specific application. (For more details see the [http://tomcat.apache.org/tomcat-7.0-doc/config/context.html#Defining_a_context Tomcat manual])
+On a typical Debian Linux system this file should be located in `/var/lib/tomcat7/conf/Catalina/localhost/CombineArchiveWeb.xml`
+
+An example with all available parameters and explanations, as well as a configuration for apache, can be found in the [source:src/main/resources/ repository]. Also check out the [wiki:Config detailed explanation] of all config and quota parameters.
+
+
+
