@@ -18,7 +18,7 @@ Download and Compile the Source
 After you installed all neccessary tools, it is time to download the source of the main project with git. This can be accomplished by executing following command on the command line/bash:
 
 ```
-git clone git://sems.uni-rostock.de/combinearchive-web
+git clone git@github.com:SemsProject/CombineArchiveWeb.git
 ```
 
 This creates a new folder called `combinearchive-web`. Switch into it and start the compiling process with maven:
