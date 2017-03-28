@@ -3,7 +3,7 @@ CombineArchive Web API
 
 The WebInterface exposes a lot of RESTful APIs. Mostly designed for internal purpose, are they also available for 3rd party developers. This document describes these interfaces, without any warranty to be up-to-date.
 
-In the following, **!http://cat.web/** is used as an example base URL of CombineArchive Web.
+In the following, `http://cat.web/` is used as an example base URL of CombineArchive Web.
 
 Import and Share API 
 ---------------------
@@ -11,22 +11,22 @@ Import and Share API
 The share and import API allows the user to use simple links to share a workspace or import an archive form another webserver.
 
 ### Import an archive 
-To import a !CombineArchive from a remote location, the //user// simple has to call following URL. In case of an error the web interface will show a simple text hint, otherwise the user gets redirected to his workspace. 
+To import a CombineArchive from a remote location, the *user* simple has to call following URL. In case of an error the web interface will show a simple text hint, otherwise the user gets redirected to his workspace. 
 
 ```
 http://cat.web/rest/import?remote=REMOTEURL&name=NAME&type=TYPE
 ```
 
-**REMOTEURL** specifies the URL to the archive [None](BR)
-**NAME** is the name, which is displayed in the web interface. This filed is //optional//. If not given the application tries to guess a name. [None](BR)
-**TYPE** defines which kind of source you want to import. The default value is //HTTP//.
+* **REMOTEURL** specifies the URL to the archive  
+* **NAME** is the name, which is displayed in the web interface. This filed is *optional*. If not given the application tries to guess a name.  
+* **TYPE** defines which kind of source you want to import. The default value is *HTTP*.
 
 Possible types:
   - **HTTP**
-  - **GIT** to clone a GIT repository eg. from !GitHub or the !CellMl project
+  - **GIT** to clone a GIT repository eg. from GitHub or the CellMl project
 
 #### Advanced Import 
-It is also possible to //POST// a json String to the end point, to utelize more advanced import features. Whereby the endpoint URL is the same, the /Content-Type should be either `application/json` or `multipart/form-data`. When using the multipart request it is also possible to upload an archive as well as files, which should be packed into the !CombineArchive. However it is mandatory to send a json string following these pattern:
+It is also possible to *POST* a json String to the end point, to utelize more advanced import features. Whereby the endpoint URL is the same, the /Content-Type should be either `application/json` or `multipart/form-data`. When using the multipart request it is also possible to upload an archive as well as files, which should be packed into the !CombineArchive. However it is mandatory to send a json string following these pattern:
 
 ```json
 {
@@ -88,8 +88,8 @@ In case of a multipart request following naming scheme is expected:
 * **archiveName**: Displayed name of the new !CombineArchive in the web interface.
 * **type**: Specifies the access method for remote import. See above for possible values.
 * **remoteUrl**: URL to the remote archive.
-* //**Note:**// Leave **type** and **remoteUrl** blank, if you want to add an archive to the post request or create a new blank archive.
-* **ownVCard**: //(Boolean)// If set to true, webCAT will add the information specified in **vcard** to the root node of the archive. Possible usage scenario is to store who generated this archive.
+* ***Note:*** Leave **type** and **remoteUrl** blank, if you want to add an archive to the post request or create a new blank archive.
+* **ownVCard**: *(Boolean)* If set to true, webCAT will add the information specified in **vcard** to the root node of the archive. Possible usage scenario is to store who generated this archive.
 * **vcard**: VCard of the creator.
 
 ```json
