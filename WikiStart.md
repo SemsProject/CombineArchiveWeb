@@ -21,7 +21,7 @@ We use maven as build tool in this project. To build a binary file from our sour
 mvn package
 ```
 
-For more detailed instructions see /BuildAndInstall.
+For more detailed instructions see the [build and install instructions](BuildAndInstall).
 
 API 
 ----
