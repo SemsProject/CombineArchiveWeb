@@ -1,5 +1,5 @@
-Build and Install the !CombineArchive !WebInterface 
-====================================================
+Build and Install the CombineArchive WebInterface 
+=================================================
 
 In order to run your own instance of the !CombineArchive !WebInterface you need to obtain a binary, deploy it to your web server and optionally configure the tool.
 
@@ -27,4 +27,14 @@ On a typical Debian Linux system this file should be located in `/var/lib/tomcat
 An example with all available parameters and explanations, as well as a configuration for apache, can be found in the [repository](https://github.com/SemsProject/CombineArchiveWeb/tree/master/src/main/resources). Also check out the [detailed explanation](Config) of all config and quota parameters.
 
 
+Deploy with Docker
+------------------
 
+We also provide an ready-made [Docker container](https://hub.docker.com/r/binfalse/webcat/) for easy and conveniet deployment.
+Simply run
+
+```sh
+docker run  --rm -it -p 1234:8080 -v /storage/for/webcat:/srv/CombineArchiveWeb binfalse/webcat:latest
+```
+
+This will expose webCAT on the local port `1234` and use the directory `/storage/for/webcat` to permanently store user data.
