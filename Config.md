@@ -15,11 +15,26 @@ should point to a permanent directory with read/write rights for the !ServletCon
 ### `MAX_STATS_AGE`
 is the max age of the cached satistical information. So if a client requests the stats and the cache is older than *MAX_STATS_AGE*, a rescan will be triggered (on a separate thread). This can produce some significant cpu load, so if you plan to provide a larger installation, you should increase the default 180 seconds (3min).
 
+### `STATS_PUBLIC`
+determines if the statistics can be accessed by every user, i.e. without providing the [`STATS_SECRET`](#stats-secret).
+
+### `STATS_SECRET`
+is used to query all statistics, or query stats even when they are not [public](#stats-public).
+
 ### `FEEDBACK_URL`
 is the URL used in the feedback button. By default it points to the *new ticket* page of this project. Feel free to set another URL or in case you want to disable the button, just set an empty string.
 
 ### `SEDML_WEBTOOLS`
 is the URL used in the *simulate* button on the archive page. A direct archive-download url is just concated to this string. By default this URL is not set, leading to hiding the *simulate* button in the interface.
+
+### `CARO_URL`
+is the URL to a CaRo converter instance, enabling webCAT to convert CombineArchives to [Research Objects](http://www.researchobject.org/), i.e. exporting them.
+
+### `ROCA_URL`
+is the URL to a RoCa converter instance, enabling webCAT to read [Research Objects](http://www.researchobject.org/), i.e. importing them.
+
+### `ALLOW_SHARING_HISTORY`
+enables the `/share/history` endpoint. This endpoint is used by the [webCAT migration script](https://github.com/SemsProject/CombineArchiveWeb/tree/master/src/main/resources/migration) and enables sharing multiple workspaces at the same time. By default deactivated.
 
 Quotas 
 -------
